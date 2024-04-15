@@ -171,20 +171,20 @@ function commandsList(stdClass $from, Telegram $telegram, array $replyMarkup): v
  */
 function showCatImage(string $chatId, Telegram $telegram, array $photoData, null|array $replyMarkup = null): void
 {
-    $replyMarkup = $replyMarkup ?? [
-            "inline_keyboard" => [
+    $replyMarkup ??= [
+        "inline_keyboard" => [
+            [
                 [
-                    [
-                        "text" => "👍",
-                        "callback_data" => "like"
-                    ],
-                    [
-                        "text" => "👎",
-                        "callback_data" => "unlike"
-                    ]
+                    "text" => "👍",
+                    "callback_data" => "like"
+                ],
+                [
+                    "text" => "👎",
+                    "callback_data" => "unlike"
                 ]
             ]
-        ];
+        ]
+    ];
 
     $telegram->sendPhoto($photoData, $chatId, json_encode($replyMarkup));
 }
