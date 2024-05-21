@@ -12,7 +12,7 @@ use Project\Services\Telegram;
 use Project\Models\Users\User;
 use Project\Exceptions\AccessModifiersException;
 
-spl_autoload_register(function (string $className): void {
+spl_autoload_register(function ($className): void {
     $className = str_replace("\\", DIRECTORY_SEPARATOR, $className);
     require_once __DIR__ . "/../../src/$className.php";
 });
