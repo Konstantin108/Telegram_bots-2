@@ -1,4 +1,4 @@
 # Editor directories and files
 .idea
-**/config.php
+#**/config.php
 /pets_without_autoloader.rar
